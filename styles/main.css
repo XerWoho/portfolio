@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(10, 92, 83);
+    height: 100svh !important;
+    border: 3px solid white;
+    box-shadow: inset 0 0 5rem rgb(20, 69, 63);
+    overflow: hidden;
+    font-family: "Geo";
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    .os_copyright {
+        text-align: center;
+        font-size: .7rem;
+    }
+    .os_wrapper img { display: none !important; }
+    .os_wrapper { 
+        width: 4rem !important;
+        padding: .2rem 0 !important;
+     }
+}
+
+p { 
+    margin: 0;
+    cursor: default;
+}
+
+main { 
+    margin: 2rem 1rem; 
+    height: 83.3%;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    place-items: center;
+}
+
+main .apps {
+    position: relative;
+    box-sizing: border-box;
+    width: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    cursor: pointer;
+    height: fit-content;
+}
+
+main .apps:hover {
+    background-color: rgb(10, 92, 83);
+
+    filter: brightness(.9);
+    border-top: 2px solid rgba(0, 0, 0, 0.464);
+    border-left: 2px solid rgba(0, 0, 0, 0.464);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.464);
+    border-right: 2px solid rgba(255, 255, 255, 0.464);
+
+}
+.apps:hover > .app_title { outline: 2px dotted white; }
+
+.apps > .app_icons {
+    position: relative;
+    z-index: 1; 
+    width: 100%; 
+}
+.apps > .app_title {
+    box-sizing: border-box;
+    color: white;
+    width: 4rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#about_app { grid-row: 1;}
+#projects_app { grid-row: 2;}
+#contact_app { grid-row: 3;}
+#trash_app { grid-row: 4;}
+#secret_app { 
+    grid-row: 1;
+    grid-column: 14;
+}
+
+.image_shadow {
+    position: absolute !important;
+    z-index: 0 !important;
+    margin-top: 2px;
+    margin-left: 2px;
+    filter: brightness(0);
+    top: 0;
+}

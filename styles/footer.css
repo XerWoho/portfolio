@@ -1,0 +1,65 @@
+@media (max-width: 700px) {
+    footer { 
+        width: 98%;
+        padding: .5rem 0;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: .3rem .5rem;
+    width: 100%;
+    background-color: #bbbbbb;
+    border-top: 3px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 5rem rgb(20, 69, 63);
+    box-sizing: border-box;
+    z-index: 4;
+}
+
+footer .os_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .2rem .5rem 0.2rem 0;
+    font-family: "geo";
+    font-size: 1.3rem;
+    height: 2rem;
+    font-weight: bold;
+    border: none;
+    border-top: 2px solid rgb(109, 109, 109);
+    border-left: 2px solid rgb(110, 110, 110);
+    background-color: rgb(143, 143, 143);
+    cursor: default;
+    width: 6rem;
+}
+.os_wrapper > .os_icon { width: 1.5rem; }
+
+footer .os_clock_time {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: .5rem;
+    padding: .2rem .5rem;
+    background-color: #9d9d9d;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+}
+
+footer .os_clock_time > .os_clock_icon {
+    position: relative;
+    z-index: 1;
+    width: 2rem;
+}
+
+footer .os_clock_time > .image_shadow {
+    top: auto;
+    width: 2rem;
+}

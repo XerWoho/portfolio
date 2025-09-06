@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Root</title>
+    <link rel="icon" href="../assets/square_root.png">
+    <link rel="stylesheet" href="../styles/blog.css">
+</head>
+<body>
+    <div class="main_title">
+        <a href="/blog/index.html">< back</a>
+        <p class="main_title_text">
+            SQUARE ROOT
+        </p>
+        <p class="main_description">
+            Whether it is in school, or in programming, taking the square root of a number is not a rarity. But, how does this simple, yet widely used algorithm work? What is behind this "√" character?
+        </p>
+    </div>
+    <div class="blog_content">
+        <p class="title">
+            Introduction
+        </p>
+        <br>
+        <p>
+            What is taking the square root of a number? Basically, the calculation; 
+            <br>
+            y = √x
+            <br>
+            <br>
+            can be written as;
+            <br>
+            y = x * x
+            <br>
+            <br>
+            In which, you try to find what value for x can be added, to get the value y.
+            Now, there are a lof of reasons to do this, but the biggest usage of the square root is during complicated mathmatical
+            compilations in programming. Whether it is 2D or 3D rendering, most of the time, the square root comes into play, where
+            it is used a lot.
+            <br>
+            <br>
+            Other than that, it also plays a crucial role in our life. 
+            <br>
+            You can find the usage of square roots in finances, statistics,
+            geometry, physics, engineering or data analysis. Basically, everything that revolves around numbers, is bound to need 
+            a square root number.
+            <br>
+            <br>
+            <br>
+            So, from where did we get this awesome formula though? Well, we gotta go back a lot.
+            In the old times, the Babylonian, Egyptian, and Greek Mathmaticians. Even they used
+            square roots in their time.
+            <br>
+            The tactics used for determining the square root of a number vary a lot though, as 
+            there is always more than just one way of finding out how something works.
+            <br>
+            <br>
+            However, what we will be focusing on, is the Babylonian method, because it is the most
+            elegant method from all of them (This is not an opinion, it is a fact, deal with it.).
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="title">
+                Formula
+            </p>
+            <br>
+            <p>
+                The Babylonian's had a good idea in mind, when trying to decide what would be a good
+                algorithm, to determine the square root.
+                <br>
+                As mentioned prior, basically, taking the square root of a number looks like this;
+                <br>
+                y = x*x
+                <br>
+                <br>
+                And, you can also write that in a different way;
+                <br>
+                y / x = x
+                <br>
+                <br>
+                so, basically, the square root of a number, is the number, divided by the square root itself (duh.).
+                So, a logical formula, would be this;
+                <br>
+                xn+1 = (xn + (a/xn)) / 2
+                <br>
+                <br>
+                If you guys didnt get it yet, this is in fact, a recursive function. Lets take it step by step.
+                <br>
+                The value for "xn", is an initial guess value. In there, you can guess any number you want, doesnt matter.
+                I personally take a (the number we want the root of), and divide it by two, for my first guess, but it doesnt really matter.
+                <br>
+                <br>
+                </p>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="title">
+                    Usage
+                </p>
+                <p>
+                Lets say, our a is 19. We want the square root of that. This is how the function would look;
+                <br>
+                <br>
+                Step 1. <br>
+                xn = 19 / 2 = 9.5
+                <br>
+                xn+1 = (9.5 + (19 / 9.5)) / 2
+                <br>
+                xn+1 = 5.75
+                <br>
+                <br>
+                Step 2. <br>
+                xn+1 = (5.75 + (19 / 5.75)) / 2
+                <br>
+                xn+1 = 4.527173913
+                <br>
+                <br>
+                Step 3. <br>
+                xn+1 = (4.53 + (19 / 4.53)) / 2
+                <br>
+                xn+1 = 4.3621302428
+
+                <br>
+                <br>
+                <br>
+                That is a weird number, but what is the square root of 19 anyway? <br>
+                Well, the square root is 4.3588989435, which is pretty damn close if you ask me.
+                This method, is not a finite method. You can repeat the recursion, to any extent. Until
+                you get the identical value. Meaning, until xn equals xn+1. 
+                <br>
+                <br>
+                Its as simple as that. This is a quick and easy way to approximate the square root of a number,
+                by simply "running" this recursion three times. But, if we were gonna programm this, how would
+                it look like?
+                <br>
+                <br>
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="title">
+                Programm
+            </p>
+            <br>
+            <div class="programm">
+                <code class="code">
+                    # 0.000001 perfect value
+                    <br>
+                    #
+                    <br>
+                    # The bigger the amount of 0 there is
+                    <br>
+                    # the more is computational power required, 
+                    <br>
+                    # because the recursio continues, until
+                    <br>
+                    # the statement is met
+                    <br>
+                    CLOSE_RANGE = 0.000001
+                    <br>
+                    
+                    <br>
+                    # It compares xn+1 and xn, to determine
+                    <br>
+                    # how close the values are together.
+                    <br>
+                    # If they are close enough, it
+                    <br>
+                    # returns true
+                    <br>
+                    def checker(val, num):
+                    <br>
+                    # to determine the closeness of the range
+                    <br>
+                    # we gotta ignore the negative decimal values.
+                    <br>
+                    # So, we just get both positiv, and negative, and 
+                    <br>
+                    # then compare both
+                    <br>
+                    l = val - num
+                    <br>
+                    l2 = num - val
+                    <br>
+                    
+                    <br>
+                    return abs(l) < CLOSE_RANGE or abs(l2) < CLOSE_RANGE
+                    <br>
+                    
+                    <br>
+                    
+                    <br>
+                    def square_root(num):
+                    <br>
+                    # s = num / 2, is basically
+                    <br>
+                    # as mentioned prior, a starting point.
+                    <br>
+                    # s is in this case xn
+                    <br>
+                    s = num / 2
+                    <br>
+                    
+                    <br>
+                    # l is our xn+1, and because we havent
+                    <br>
+                    # started calculating yet, it is set to 0
+                    <br>
+                    l = 0
+                    <br>
+                    
+                    <br>
+                    # recursive function
+                    <br>
+                    while True:
+                    <br>
+                    # checks whether or not
+                    <br>
+                    # xn multiplied by itself, 
+                    <br>
+                    # equals the number
+                    <br>
+                    if checker(s*s, num):
+                    <br>
+                    print(s) # print the result
+                    <br>
+                    break
+                    <br>
+                    else:
+                    <br>
+                    # else, it sets the xn to a new value
+                    <br>
+                    # and then checks again
+                    <br>
+                    l = num / s
+                    <br>
+                    if checker(l*l, num):
+                    <br>
+                    print(l)
+                    <br>
+                    break
+                    <br>
+                    else:
+                    <br>
+                    # if that didnt work
+                    <br>
+                    # it uses the formula from the Babylonians
+                    <br>
+                    # and sets xn to that value, to re-start the 
+                    <br>
+                    # function
+                    <br>
+                    s = (s+l)/2
+                    <br>
+                    
+                    <br>
+                    square_root(64)  # 8.000000000000101
+                    <br>
+                </code>
+            </div>
+        </p>
+    </div>
+    <a href="/blog/index.html">< back</a>
+</body>
+</html>

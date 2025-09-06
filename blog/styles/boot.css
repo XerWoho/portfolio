@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Web IBM MDA';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/web_ibm_mda.woff) format('woff');
+}
+
+* { box-sizing: border-box; }
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Web IBM MDA';
+    overflow: hidden;
+    color: white;
+}
+
+.starting_screen div, 
+.starting_screen div > p,
+.starting_screen img {
+    opacity: 0;
+}
+
+.starting_screen,
+.starting_screen_final {
+    width: 100%;
+    height: 100dvh;
+    background-color: black;
+    padding: 3rem;
+    display: none;
+    justify-content: space-between;
+}
+
+.starting_screen .starting_screen_data {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.starting_screen_data .starting_loading_text {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Web IBM MDA';
+}
+
+.starting_launch_info {
+    font-size: .8rem;
+    color: gray;
+    margin-bottom: 3rem;
+}
+
+.starting_title_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.starting_title_wrapper .starting_icon {
+    width: 4rem;
+}
+
+.starting_screen .starting_logo {
+    /* width: 2rem; */
+    height: 20rem;
+}
+
+.starting_control_panel {
+    margin-bottom: 0;
+}
+
+.starting_detections {
+    display: flex;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+.starting_detections p {
+    margin-top: 3px;
+}
+
+
+.starting_screen_final {
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.starting_screen_final div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.starting_screen_final .secondary_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.starting_info,
+.secondary_infos {
+    padding: 5px;
+    box-shadow:  
+        0 0 0 2px black,
+        0 0 0 4px white,
+        0 0 0 6px black,
+        0 0 0 8px white;
+}
+
+.pci_info {
+    margin-top: 5rem;
+}
+
+.init_info,
+.open_info { opacity: 0; }
+
+.introduction_screen { 
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    transition: .3s;
+    background-color: rgb(60, 20, 20);
+}
+
+.introduction_screen img {
+    height: 17rem;
+    filter: drop-shadow(0 0 5rem white);
+}
