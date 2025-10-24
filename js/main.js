@@ -116,8 +116,12 @@ apps.forEach(app => {
         if(app_name == "projects") {
             // add the projects to the tab_text
             // myFonttyper
-            tab_text.innerHTML += `<a href="https://myfonttyper.com">myFonttyper (a website for students)</a><br>`
-            tab_text.innerHTML += `<a href="https://cavorok.com">Cavorok [beta] (a website for property-management)</a><br>`
+            tab_text.innerHTML += `<a href="https://myfonttyper.com">
+                <img src="../assets/myfonttyper.png" /> myFonttyper (a website for students)
+                </a><br>`
+            tab_text.innerHTML += `<a href="https://cavorok.com">
+            <img src="../assets/cavorok.png" /> Cavorok (a website for property-management)
+                </a><br>`
         } else if(app_name == "trash") {
             // javascript trash section
             const js_wrapper = document.createElement("section")
